@@ -347,7 +347,7 @@ if (iseisenstein(p), print("    an Eisenstein prime"));
 if (isfactorial(p), print("    a factorial prime"));
 if (isfermat(p), print("    a Fermat prime"));
 if (isfibonacci(p), print("    a Fibonacci prime"));
-if (isfortunate(p), print("    a Fortunate prime"));
+\\if (isfortunate(p), print("    a Fortunate prime"));
 if (isgaussian(p), print("    a Gaussian prime"));
 if (isgood(p), print("    a good prime"));
 if (ishappy(p), print("    a happy prime"));
