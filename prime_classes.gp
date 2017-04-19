@@ -328,6 +328,22 @@ if (isprime(2*p + 1), return(1), return(0));
 
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\ A prime number p is a Woodall prime if p is of the form
+\\ n*2^n -1 for some positive integer n
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+{
+iswoodall(p)=
+x = ceil(log(p+1)/log(2));
+ub = x -1;
+lb = floor((x-1)/2);
+for (i=lb, ub,
+  if (p == i*2^i - 1, return(1))
+);
+return(0);
+}
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\ What prime is it?
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 {
@@ -356,6 +372,7 @@ if (isprimorial(p), print("    a primorial prime"));
 if (ispythagorean(p), print("    a Pythagorean prime"));
 if (issafe(p), print("    a safe prime"));
 if (issophiegermain(p), print("    a Sophie Germain prime"));
+if (isWoodall(p), print("    a Woodall prime"));
 if (hastwin(p), print("    has a twin prime"));
 if (hascousin(p), print("    has a cousin prime"));
 
