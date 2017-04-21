@@ -372,7 +372,7 @@ if (isprimorial(p), print("    a primorial prime"));
 if (ispythagorean(p), print("    a Pythagorean prime"));
 if (issafe(p), print("    a safe prime"));
 if (issophiegermain(p), print("    a Sophie Germain prime"));
-if (isWoodall(p), print("    a Woodall prime"));
+if (iswoodall(p), print("    a Woodall prime"));
 if (hastwin(p), print("    has a twin prime"));
 if (hascousin(p), print("    has a cousin prime"));
 
