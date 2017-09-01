@@ -14,7 +14,7 @@ Author: Ning Shang (syncom.dev@gmail.com)
 isbalanced(p)=
 a = precprime(p-1);
 b = nextprime(p+1);
-if (p == (a + b)/2, 1, 0)
+if (p == (a + b)/2, return(1), return(0));
 }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -30,7 +30,7 @@ if (isprime(q), return(1),
   if (s[1] == 1 && m[1, 2] == 2, return(1));
   if (s[1] == 2 && m[1,2] == 1 && m[2,2] == 1, return(1));
   return(0);
-)
+);
 }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -57,7 +57,7 @@ return(1);
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 {
 hascousin(p)=
-if (isprime(p+4) || isprime(p-4), return(1), return(0))
+if (isprime(p+4) || isprime(p-4), return(1), return(0));
 }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -126,7 +126,7 @@ if (p+1 == 2^n || p+1 == 2^(n-1), return(1), return(0));
 \\ verify
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 {
-doublemersennenumber(p)=2^(2^p-1)-1
+doublemersennenumber(p)=2^(2^p-1)-1;
 }
 {
 isdoublemersenne(p)=
@@ -134,7 +134,7 @@ if (p == doublemersennenumber(2) ||
     p == doublemersennenumber(3) ||
     p == doublemersennenumber(5) ||
     p == doublemersennenumber(7), 
-    return(1), return(0))
+    return(1), return(0));
 }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -143,7 +143,7 @@ if (p == doublemersennenumber(2) ||
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 {
 iseisenstein(p)=
-if (p % 3 == 2, return(1), return(0))
+if (p % 3 == 2, return(1), return(0));
 }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -157,7 +157,7 @@ for (i = 0, n,
 fi = i!;
 if (fi == p+1 || fi == p-1, return(1))
 );
-return(0)
+return(0);
 }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -181,7 +181,7 @@ if (n == p, return(1));
 i = i + 1;
 n = fibonacci(i);
 );
-return(0)
+return(0);
 }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -208,7 +208,7 @@ return(0);
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 {
 isgaussian(p)=
-if (p % 4 == 3, return(1), return(0))
+if (p % 4 == 3, return(1), return(0));
 }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -246,7 +246,7 @@ while (q != 0,
   q = q\10;
   s = s + r^2;
 );
-s
+return(s);
 }
 {
 ishappy(p)=
@@ -276,7 +276,7 @@ if (n == p, return(1));
 i = i + 1;
 n = lucas(i);
 );
-return(0)
+return(0);
 }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

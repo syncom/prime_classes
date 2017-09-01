@@ -13,3 +13,10 @@ In `gp` console:
 p=2017
 iswhatprime(p)
 ```
+
+To run the script from a Linux shell (e.g., for automation), use `gp`'s 
+`-q` option:
+```
+$ (cat prime_classes.gp; echo "p=2017;"; echo "iswhatprime(p)") | gp -q
+```
+
