@@ -326,6 +326,17 @@ issophiegermain(p)=
 if (isprime(2*p + 1), return(1), return(0));
 }
 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\ A prime number p is a Wagstaff prime if it is of the
+\\ form (2^n+1)/3
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+{
+iswagstaff(p)=
+if (!isprime(p), return(0));
+k = 3 * p - 1;
+n = ispower(k);
+if (!n || 2^n != k, return(0), return(1));
+}
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\ A prime number p is a Woodall prime if p is of the form
@@ -372,6 +383,7 @@ if (isprimorial(p), print("a primorial prime"));
 if (ispythagorean(p), print("a Pythagorean prime"));
 if (issafe(p), print("a safe prime"));
 if (issophiegermain(p), print("a Sophie Germain prime"));
+if (iswagstaff(p), print("a Wagstaff prime"));
 if (iswoodall(p), print("a Woodall prime"));
 if (hastwin(p), print("has a twin prime"));
 if (hascousin(p), print("has a cousin prime"));
