@@ -1,0 +1,4 @@
+# See https://github.com/github/linguist/blob/master/docs/overrides.md
+# See https://github.com/github/linguist/issues/3665: Mark .gp as text for it's
+# not a language linguist recognizes
+*.gp linguist-language=text
