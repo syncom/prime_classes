@@ -218,13 +218,10 @@ if (p % 4 == 3, return(1), return(0));
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 {
 isgood(p)=
-if (p==2, return(0));
-n=0;
-forprime(x=2, p, n = n+1);
-for (i=1, n-1, 
-  if ( p^2 <= prime(n-i) * prime(n+i), return(0));
-);
-return(1);
+if(!isprime(p), return(0));
+my(a=p, b=p, p2=p^2);
+while(a>2, a=precprime(a-1);b=nextprime(b+1); if(p2<a*b, return(0)));
+return(p>2);
 }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
