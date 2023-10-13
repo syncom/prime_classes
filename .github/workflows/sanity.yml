@@ -1,0 +1,35 @@
+name: 'Sanity checks'
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  sanity:
+    strategy:
+      fail-fast: false
+      # Linux runner
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: 'Install GP'
+        run: |
+          set -euxo pipefail
+          sudo apt update
+          sudo apt install pari-gp
+
+      - name: 'Checkout code'
+        uses: actions/checkout@v3
+
+      - name: 'Run tests'
+        run: |
+          set -euxo pipefail
+          # Check first batch of natural numbers, and today's date in ISO8601
+          # format
+          for i in {1..4249} "$(date +%Y%m%d)"; do
+            (cat prime_classes.gp; echo "iswhatprime($i)") | gp -q
+          done
